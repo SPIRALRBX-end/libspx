@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build SPX Converter Simple",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-O3",
+        "-DUSE_MPG123",
+        "-DUSE_VORBIS",
+        "-I${workspaceFolder}/include",
+        "src/main.c",
+        "src/spx_codec.c",
+        "src/spx_metadata.c",
+        "src/spx_decoder.c",
+        "src/spx_encoder.c",
+        "-o",
+        "${workspaceFolder}/spxconv.exe",
+        "-lshlwapi",
+        "-lole32",
+        "-lwinmm",
+        "-lws2_32"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
